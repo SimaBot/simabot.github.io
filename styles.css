@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+}
+/* Font */
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, form, fieldset, legend, input, textarea, select, button, table, th, td, caption {
+    font-family: 'Averia Serif Libre', cursive;
+}
+.btn{
+    font-family: 'Averia Serif Libre', cursive;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 25px;
+    margin: 0;
+    margin-top: 5%;
+}
+#background{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.btn {
+    color: #fff;
+    background-color: rgba(50, 255, 50, 0.486);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 100px;
+    text-decoration: none;
+}
+.btn:hover {
+    background-color: rgb(50, 255, 50);
+}
+.btn *{
+    margin: 10px;
+}
+.btn img{
+    width: 64px;
+    height: 64px;
+}
