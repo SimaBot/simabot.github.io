@@ -47,3 +47,106 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, form, fieldset, legend, input
     width: 64px;
     height: 64px;
 }
+.gui-notify a {
+    color: rgb(0, 255, 98);
+}
+
+.gui-notify a:hover {
+    color: rgb(255, 255, 255);
+}
+
+input, textarea, select {
+    background-color: #00000025;
+    color: #fff;
+    border: 1px solid rgb(0, 255, 98);
+    outline: none;
+}
+
+.gui-notify textarea {
+    height: 200px;
+    width: 60%;
+}
+
+.gui-notify input:active,
+.gui-notify select:active {
+    background-color: #fff;
+    color: #000000;
+}
+
+.action-notify {
+    flex-direction: row !important;
+}
+
+.action-notify p {
+    padding: 1%;
+}
+
+.action-notify {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.navbar{
+    background-color: rgb(6, 112, 46);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 0;
+    color: #fff;
+}
+.navbar a{
+    color: #fff;
+}
+.navbar a:hover{
+    color: rgb(0, 255, 98);
+}
+/* Detect small screen */
+@media screen and (max-width: 768px) {
+    .win {
+        width: 97%;
+        margin: 0 !important;
+        position: absolute !important;
+        background: #000000 !important;
+        border-radius: 0 !important;
+    }
+    .action-notify {
+        flex-direction: column !important;
+    }
+}
+.win{
+    position: fixed;
+    background-color: rgba(50, 255, 50, 0.137);
+    border-radius: 20px;
+    padding: 1%;
+    color: #fff;
+    border: #fff solid 1px;
+}
+.win-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: #fff solid 1px;
+    border-radius: 20px;
+    background-color: #00000054;
+    user-select: none;
+    cursor: grabbing
+}
+.win-bar p{
+    margin-left: 20%;
+    font-size: 200%;
+    transition: all 0.5s;
+    border-radius: 20px;
+    cursor: pointer;
+    padding-left: 1%;
+    padding-right: 1%;
+    border: rgba(255, 255, 255, 0) solid 1px;
+}
+.win-bar p:hover{
+    color: #fff;
+    border: #fff solid 1px;
+    background-color: #00000054;
+}
