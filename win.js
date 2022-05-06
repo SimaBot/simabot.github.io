@@ -42,8 +42,9 @@ function dragElement(elmnt, el2) {
     }
 }
 
-win.create = function(title) {
+win.create = function(title, id) {
     var win = document.createElement('div');
+    win.id = id;
     var vWin;
     win.hide = function() {
         if (win.style.display != 'none') {

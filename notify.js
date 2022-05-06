@@ -62,15 +62,16 @@ notify.importFromURL = function (){
         return;
     }
     notify.entered = true;
-    notify.msg.value = out.msg || '';
-    notify.data.value = out.data || '';
-    notify.id.selectedOptions = out.id;
+    notify.el.msg.value = out.msg;
+    notify.el.data.value = out.data;
+    notify.el.id.selectedOptions = out.id;
 }
 notify.parser = function (url) {
+    const simabot = typeof channels !== 'undefined';
     var out = {
         id: -1,
-        data: ' ',
-        msg: ' '
+        data: '',
+        msg: ''
     };
     var urlObj = null;
 
@@ -84,14 +85,32 @@ notify.parser = function (url) {
     if (!urlObj) {
         return { error: '03' };
     }
+    if(simabot){
+        if (urlObj.host != 'simabot.github.io') {
+            return { error: '05' };
+        }
+    }
     const params = urlObj.searchParams;
-    out.id = Number(params.get('n')) || -1;
+    out.id = Number(params.get('i')) || -1;
     if (out.id == -1) {
         return { error: '07' };
     }
-    out.data = decodeURIComponent(out.data);
-    out.msg = params.get('m');
-    out.msg = decodeURIComponent(out.msg);
+    if(simabot){
+        // Check if id not out of range
+        const arr = Object.keys(channels.channels);
+        if ((id + 1) > arr.length) {
+            return { error: '14' };
+        }
+    }
+    const data = params.get('d');
+    if(data){
+        out.data = decodeURIComponent(out.data);
+    }
+    const msg = params.get('m');
+    if (msg){
+        out.msg = decodeURIComponent(msg);
+    }
+    console.log(out);
     return out;
 }
 

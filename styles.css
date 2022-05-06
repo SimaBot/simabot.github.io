@@ -116,13 +116,18 @@ input, textarea, select {
         flex-direction: column !important;
     }
 }
-.win{
+.win {
     position: fixed;
+}
+#radioWin{
+    transform: scale(0.5, 0.5);
+    border: #fff solid 1px;
+    padding: 1%;
+}
+.win, iframe {
     background-color: rgba(50, 255, 50, 0.137);
     border-radius: 20px;
-    padding: 1%;
     color: #fff;
-    border: #fff solid 1px;
 }
 .win-bar{
     display: flex;
