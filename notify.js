@@ -12,7 +12,8 @@ notify.options = [
     "Get spin codes for Shindo (Roblox Game)",
     "Get last scripts for Roblox game (req. game name)",
     "Get last episode for anime (req. index from Animelist [0-5])",
-    "Get video on YouTube (req. name)"
+    "Get video on YouTube (req. name)",
+    "RSS feed (req. url)"
 ];
 
 notify.descriptonOptions = {
@@ -64,7 +65,7 @@ notify.importFromURL = function (){
     notify.entered = true;
     notify.el.msg.value = out.msg;
     notify.el.data.value = out.data;
-    notify.el.id.selectedOptions = out.id;
+    notify.el.id.selectedIndex = out.id;
 }
 notify.parser = function (url) {
     const simabot = typeof channels !== 'undefined';
@@ -98,7 +99,7 @@ notify.parser = function (url) {
     if(simabot){
         // Check if id not out of range
         const arr = Object.keys(channels.channels);
-        if ((id + 1) > arr.length) {
+        if ((out.id + 1) > arr.length) {
             return { error: '14' };
         }
     }
