@@ -14,11 +14,14 @@ notify.options = [
     "Get last scripts for Roblox game (req. game name)",
     "Get last episode for anime (req. index from Animelist [0-5])",
     "Get video on YouTube (req. name)",
-    "RSS feed (req. url)"
+    "RSS feed (req. url)",
+    "Telegram channel (req. channel id)"
 ];
 
 notify.descriptonOptions = {
-    7: '[ "One Piece", "Boruto: Naruto Next Generations", "That Time I Got Reincarnated as a Slime", "My Hero Academy", "Pokemon" ]'
+    8: '[ "One Piece", "Boruto: Naruto Next Generations", "That Time I Got Reincarnated as a Slime", "My Hero Academy", "Pokemon" ]',
+    10: 'Example: "https://store.steampowered.com/feeds/news/app/739630/"',
+    11: 'Example: "Kuplinov_Telegram"'
 };
 notify.loadOptions = function () {
     for (let i = 0; i < notify.options.length; i++) {
