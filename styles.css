@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    background-color: #000000;
 }
 /* Font */
 h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, form, fieldset, legend, input, textarea, select, button, table, th, td, caption {
@@ -88,7 +89,6 @@ input, textarea, select {
     align-items: center;
 }
 .navbar{
-    background-color: rgb(6, 112, 46);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -98,10 +98,15 @@ input, textarea, select {
     color: #fff;
 }
 .navbar a{
+    border: solid 1px rgb(6, 112, 46);
+    padding: 10px;
+    border-radius: 100px;
+    box-shadow: 0px 0px 10px rgb(6, 112, 46);
     color: #fff;
+    text-decoration: none;
 }
 .navbar a:hover{
-    color: rgb(0, 255, 98);
+    box-shadow: none;
 }
 /* Detect small screen */
 @media screen and (max-width: 768px) {
@@ -154,4 +159,94 @@ input, textarea, select {
     color: #fff;
     border: #fff solid 1px;
     background-color: #00000054;
+}
+
+/* Wave */
+.background {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: scaleX(2);
+    animation: wave-move-right 10s infinite;
+}
+.background * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/wave.svg') repeat-x;
+    background-size: 30%;
+}
+/* Move waves */
+.background .wave-1 {
+    animation: wave-1 20s infinite;
+    opacity: 0.5;
+}
+.background .wave-2 {
+    animation: wave-2 5s infinite;
+    opacity: 0.5;
+}
+.background .wave-3 {
+    animation: wave-3 8s infinite;
+    opacity: 0.5;
+}
+
+/* Keyframes right inf */
+@keyframes wave-move-right {
+    0% {
+        left: 0%;
+    }
+    50% {
+        left: 50%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+/* Keyframes move up and down */
+@keyframes wave-1 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes wave-2 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes wave-3 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-1%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
